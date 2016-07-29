@@ -11,6 +11,6 @@ app.get("/jokes", function(req, res){
 	res.json(jokes[jokeIndex]);
 })
 
-app.listen(3000 || process.env.PORT, function () {
+app.listen(process.env.PORT || 3000, function () {
 	console.log('Listening on http://localhost:3000');
 });
