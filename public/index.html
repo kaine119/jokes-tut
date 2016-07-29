@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>blah</title>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 		
 		var getJoke = function(){
 			$.get("./jokes", function(data){
-				$setup.(data.setup);
+				$setup.html(data.setup);
 				$punchline.html(data.punchline);
 				$punchline.css("opacity", "0")
 			});
