@@ -1,0 +1,41 @@
+* {margin: 0px;}
+html {height: 100%;}
+
+body {
+	background-color: purple;
+	display: flex;
+	margin: 0;
+	min-height: 100%;
+	align-items: center;
+}
+
+#body-container {
+	width: 60%;
+	height: 100%;
+	margin: auto;
+	color: white;
+}
+
+#setup {
+	font-family: "Slabo 27px";
+	font-size: 54px;
+}
+
+#punchline {
+	margin-top: 0.5em;
+	font-family: "Roboto";
+	font-size: 40px;
+}
+
+#scoreText {
+	font-family: "Roboto";
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+button {
+	font-family: "Roboto";
+	font-size: 16px;
+}
+
+
