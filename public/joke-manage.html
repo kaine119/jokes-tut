@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a joke!</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Slabo+27px" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		input {
+			height: 32px;
+			font-family: "Slabo 27px";
+			width: 50%;
+			font-size: 24px !important; 
+		}	
+		#jokeSubmit {
+			font-family: "Roboto" !important; 
+			font-size: 16px !important; 
+			width: auto !important;
+		}
+		label {
+			font-family: "Slabo 27px";
+			font-size: 32px;
+		}
+		</style>
+</head>
+<body>
+	<div id="body-container">
+		<p><a href="index.html" style="color: white; font-family: 'Roboto'">&larr;Back</a></p>
+		<br>
+		<form id="addJoke" name="createJoke" method="post" action="/createJoke">
+			<label>Add a joke</label><br>
+			<input type="text" id="setupIn" placeholder="Setup" required="required" style="font-size: 10pt;"><br>
+			<input type="text" id="punchlineIn" placeholder="Punchline" required="required" style="font-size: 10pt;"><br>
+			<button type="submit" name="submit" value="submit" >Submit</button>
+		</form>
+		<p id="createSuccessNotif" style="opacity: 1">Joke created successfully.</p>
+		<br>
+		<form id="delJoke" name="deleteJoke" method="post" action="/deleteJoke">
+			<label>Delete a joke</label><br>
+			<select id="jokesList"></select><br>
+			<button id="refreshJokes">Refresh Jokes</button>
+			<button id="deleteJoke" type="submit">Delete</button>
+		</form>
+	</div>
+		
+<script type="text/javascript" src="jokeManagement.js"></script>
+
+</body>
+</html>

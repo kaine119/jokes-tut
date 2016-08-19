@@ -7,12 +7,13 @@ $(document).ready(function(){
 	var currentId = -1;
 	
 	var getJoke = function(){
-		$.get("./jokes", function(data){
+		$setup.html("Loading...");
+		$container.css("opacity", "0")
+		$.get("./oneJoke", function(data){
 			$setup.html(data.setup);
-			$punchline.html(data.punchline);
-			$container.css("opacity", "0");
+			$punchline.text(data.punchline);
 			$score.html(data.score)
-			currentId = data.id;
+			currentId = data._id;
 			
 		});
 	}
@@ -26,10 +27,12 @@ $(document).ready(function(){
 	});
 
 	$("#up").click(function(){
-		$.post({
+		$score.html("...")
+		$.ajax({
 			url: "/upvote",
 			contentType: "application/json",
 			data: JSON.stringify({id: currentId}),
+			type: "PUT",
 			success: function(data){
 				$score.html(data.newScore);
 			}
@@ -37,10 +40,12 @@ $(document).ready(function(){
 	});
 
 	$("#down").click(function(){
-		$.post({
+		$score.html("...")
+		$.ajax({
 			url: "/downvote",
 			contentType: "application/json",
 			data: JSON.stringify({id: currentId}),
+			type: "PUT",
 			success: function(data){
 				$score.html(data.newScore);
 			}
